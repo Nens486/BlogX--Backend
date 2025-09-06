@@ -15,7 +15,10 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: ["https://blog-x-eight.vercel.app/"], // frontend domain
+  credentials: true
+}));
 app.use(express.json());
 app.use(morgan("dev"));
 
